@@ -1,0 +1,9 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.rewrite.RenamePipelineDisplayName
+displayName: Rename Jenkins pipeline display name
+
+recipeList:
+  - org.openrewrite.text.FindAndReplace:
+      filePattern: "**/mavenPipelinePlugin"
+      find: 'currentBuild.displayName = "mavenPipelinePlugin"'
+      replace: 'currentBuild.displayName = "HorizonPipeline"'
